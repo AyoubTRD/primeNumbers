@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nombres Premiers Generateur</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="button.css">
+  <link rel="stylesheet" href="scrollbar.css">
+  <link rel="stylesheet" href="nums.css">
+  <link rel="stylesheet" href="form.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="inner">
+
+      <form>
+        <label for="maxNum">Entrer un entier naturel <code>x</code> pour savoir les nombres premiers qui existent dans
+          <code>[0; x]</code>:</label>
+        <input type="number" placeholder="l'entier naturel" name="maxNum" id="maxNum">
+        <button type="submit" class="main">
+          <div class="right"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+          <div class="bottom"></div>
+          generate
+        </button>
+        <p class="error hide">veuillez entrer un entier naturel, par exemple: </p>
+      </form>
+
+      <div class="nums">
+        <div class="child">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
