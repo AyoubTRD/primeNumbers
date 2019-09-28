@@ -83,7 +83,5 @@ $("form input").addEventListener("keyup", e => {
         1000
       );
     }, 5000);
-  } else {
-    $(".error-2").classList.remove("hide");
   }
 });
