@@ -32,6 +32,7 @@ code {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 15px 0;
 }
 .inner {
   width: 650px;
