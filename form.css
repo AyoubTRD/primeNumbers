@@ -9,4 +9,14 @@ input {
   width: 70%;
   padding: 10px 10px;
   font-size: 18px;
+  color: #fff;
+  background-color: #297fb994;
+  border: none;
+}
+input::placeholder {
+  color: #fff;
+}
+.rule {
+  text-align: center;
+  color: #f39c12;
 }

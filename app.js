@@ -1,6 +1,9 @@
-const getPrimeNumbers = maxNum => {
-  const PrimeNumbers = [0];
-  for (let newMax = 1; newMax <= maxNum; newMax++) {
+const getPrimeNumbers = (maxNum, minNum = 0) => {
+  const PrimeNumbers = minNum == 0 ? [0] : [];
+
+  minNum = minNum < 2 ? 2 : minNum;
+
+  for (let newMax = minNum; newMax <= maxNum; newMax++) {
     let isPrime = true;
     for (let num = 2; num < Math.floor(newMax / 2) + 1; num++) {
       const result = newMax / num;
@@ -32,17 +35,19 @@ $("form").addEventListener("submit", e => {
   $(".nums .child").innerHTML = "";
   let { maxNum } = form;
   maxNum = Number(maxNum.value);
-  if (maxNum >= 0) {
+  let minNum = Number($("form").minNum.value);
+
+  if (maxNum >= 0 && minNum < maxNum && minNum >= 0) {
     $(
       ".error"
     ).textContent = `veuillez entrer un entier naturel, par exemple: `;
     $(".error").classList.add("hide");
-    showNums(getPrimeNumbers(maxNum));
-  } else {
+    showNums(getPrimeNumbers(maxNum, minNum));
+  } else if (maxNum < 0 || minNum < 0) {
     $(
       ".error"
     ).textContent = `veuillez entrer un entier naturel, par exemple: `;
-    const randomNum = Math.round(Math.random() * 100000);
+    const randomNum = Math.round(Math.random() * 20000);
     $(".error").textContent += `${randomNum}`;
     $(".error").classList.remove("hide");
     setTimeout(() => {
@@ -60,9 +65,11 @@ $("form").addEventListener("submit", e => {
 $("form input").addEventListener("keyup", e => {
   const num = Number(e.target.value);
   if (e.keyCode === 13 && num !== Math.round(num)) {
+    console.log(maxNum >= minNum);
     $(
       ".error"
     ).textContent = `veuillez entrer un entier naturel, par exemple: `;
+
     const randomNum = Math.round(Math.random() * 100000);
     $(".error").textContent += `${randomNum}`;
     $(".error").classList.remove("hide");
@@ -76,5 +83,7 @@ $("form input").addEventListener("keyup", e => {
         1000
       );
     }, 5000);
+  } else {
+    $(".error-2").classList.remove("hide");
   }
 });

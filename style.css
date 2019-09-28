@@ -26,7 +26,6 @@ code {
   letter-spacing: 2px;
 }
 .container {
-  padding: 40px 0;
   width: 100vw;
   min-height: 100vh;
   display: flex;
