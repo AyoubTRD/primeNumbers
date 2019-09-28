@@ -20,9 +20,12 @@
     <div class="inner">
 
       <form>
-        <label for="maxNum">Entrer un entier naturel <code>x</code> pour savoir les nombres premiers qui existent dans
-          <code>[0; x]</code>:</label>
-        <input type="number" placeholder="l'entier naturel" name="maxNum" id="maxNum">
+        <label>Entrer deux entiers naturels <code>min</code> et <code>max</code> pour savoir les nombres
+          premiers qui existent dans
+          <code>[min; max]</code>:</label>
+        <input type="number" placeholder="min" name="minNum" id="minNum">
+        <p class="rule">il faut que min &lt; max</p>
+        <input type="number" placeholder="max" name="maxNum" id="maxNum">
         <button type="submit" class="main">
           <div class="right"></div>
           <div class="left"></div>
@@ -31,6 +34,7 @@
           generate
         </button>
         <p class="error hide">veuillez entrer un entier naturel, par exemple: </p>
+
       </form>
 
       <div class="nums">
