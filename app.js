@@ -1,5 +1,5 @@
 const getPrimeNumbers = (maxNum, minNum = 0) => {
-  const PrimeNumbers = minNum == 0 ? [0] : [];
+  const PrimeNumbers = minNum == 0 ? [] : [];
 
   minNum = minNum < 2 ? 2 : minNum;
 
